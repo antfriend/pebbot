@@ -5,6 +5,9 @@
 
 var ajax = require('ajax');
 var UI = require('ui');
+var Accel = require('ui/accel');
+
+Accel.init();
 
 // Construct URL
 var cityName = 'Boise';
@@ -15,7 +18,6 @@ var counterit = 0;
 var card = new UI.Card({
   title:'Weather',
   subtitle:'Fetching...'
-  
 });
 
 // Make the request
@@ -47,7 +49,6 @@ ajax(
     console.log('Failed fetching weather data: ' + error);
   }
 );
-
 
 // Display the Card
 card.show();
