@@ -1,6 +1,6 @@
 /**
  * 
- * Blarfo!
+ * Pebbot, the pebble robot application
  */
 
 var ajax = require('ajax');
