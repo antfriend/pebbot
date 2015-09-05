@@ -6,8 +6,11 @@
 var ajax = require('ajax');
 var UI = require('ui');
 var Accel = require('ui/accel');
+var Vector2 = require('vector2');
 
 Accel.init();
+Accel.config({rate:25,samples:1,subscribe:false});
+
 
 // Construct URL
 var cityName = 'Boise';
@@ -53,4 +56,21 @@ ajax(
 // Display the Card
 card.show();
 
+card.on('click', 'select', function(e) {
+  var wind = new UI.Window({
+    fullscreen: true,
+  });
+  var textfield = new UI.Text({
+    position: new Vector2(0, 65),
+    size: new Vector2(144, 30),
+    font: 'gothic-24-bold',
+    text: 'Pebbot!',
+    textAlign: 'center'
+  });
+  Accel.peek(function(a) {
+    console.log('Current acceleration on axis are: X=' + a.accel.x + ' Y=' + a.accel.y + ' Z=' + a.accel.z);
+  });
+  wind.add(textfield);
+  wind.show();
+});
 

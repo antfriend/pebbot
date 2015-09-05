@@ -29,6 +29,11 @@
                 "type": "font"
             },
             {
+                "file": "images/newscreen.png",
+                "name": "IMAGES_NEWSCREEN_PNG",
+                "type": "png"
+            },
+            {
                 "file": "images/pebbot.png",
                 "menuIcon": true,
                 "name": "IMAGES_PEBBOT_PNG",
